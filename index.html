@@ -12,173 +12,984 @@
 
 	
 <style>
-@import url(https://fonts.googleapis.com/css?family=Catamaran);
-body {
-  background-color:black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  text-align: center;
-  font-family: 'Catamaran', sans-serif;
+html{
+    height:100%;
+    margin: 0;
+        padding: 0;
 }
-.container-fluid {
-  background-color: white;
-  opacity:0.7;
-  width: 30%;
-  color: black;
-}
-img {
-  width: 200px;
-}
-h1 {
-  font-size: 70px;
-}
-h2 {
-  font-size: 50px;
-}
+body, map {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+              
+      .iphone{
+          width:450px;
+          height:800px;
+          background-color:#233;
+          border-radius:  80px;
+          padding: 60px 25px 120px 25px;        
+          display: inline-block;      
+      }
+          
+      .phoneInfo{
+          height:100%;
+          width:100%;
+          margin:0;
+          background-color: blue;
+          padding:0;          
+          border-radius: 15px;
+          border-color: black;
+          border-width: 4px;
+          border-style: solid;
+      }
+      
+      .iphone1
+       {
+         margin-left: 16.66% !Important;  
+           
+       }
+       
+       #twoPhones{
+           margin-top: 25px;
+           margin-bottom: 20px;
+       }
+      
+       #latlng, #theTime{
+           font-size: 14px;
+           font-family: verdana;
+           font-weight: 500;
+           font-stretch: expanded;
+           padding:0;
+           margin:0;
+       }
+       
+          #latlng{
+              padding-bottom: 12px;
+              text-align: center;
+          }
+          
+          #theTime{
+              padding:5px 0 5px 0; 
+              margin:0 15px 10px 15px;
+              color: darkseagreen;
+              text-align: center;
+              background-color: rgba(255,255,255,0.8);
+              border-radius: 20px;
+          }
+       
+       .general{
+          text-align: center;
+          height: 20%;
+          color: chocolate;
+          font-weight: 900;
+          padding: 0;
+          padding-right: 5px;
+          margin:-2px 0px 0px 0px;
+          background-color: bisque;          
+           border-top-left-radius: 15px;
+           border-top-right-radius: 15px;
+          }
+          #weatherLocation{
+              padding: 5px;
+              padding-bottom: 10px;
+              margin:0;
+              font-size: 15px;
+              
+          }
+          
+          #specific{
+             padding-top:7px;
+             height: 35%;
+             background-color: burlywood;        
+             margin:0;
+                   }
+                   #twoThirdBox{
+                       padding: 0;
+                       margin:0;
+                   }
+                   #oneThirdBox{
+                       padding: 0;
+                       margin:0;                   
+                   }
+           
+       #temp{
+           font-size: 60px;
+           vertical-align:top;
+           text-align:left;
+           padding:0 0 0 0;       
+            margin: 0px;
+            color:white;
+            font-weight:500;
+             display: inline-block;
+             font-family: "arial narrow";
+       }
+       
+       #feelsLike{
+           font-size: 20px;
+           padding:3px 0px 2px 3px;
+           color:white;
+           font-weight: 500;
+           
+       }
+       
+       #tempDiv{
+           background-color: inherit;
+           border:white solid 1px;
+           border-left-width: 1px;
+           border-top-width:3px;
+           border-right-width:1px;
+           border-radius: 12px;
+           margin:0px;
+           margin-left: 2px;
+           margin-right:3px;
+           padding:0 0 0 0;           
+           width:40%;
+              }
+       
+       #randomUnit{
+           font-size: 12px;
+           padding:2px 2px 2px 2px;
+            background-color: inherit;
+           border-radius: 3px;
+           color:black;
+           margin:0;
+       }
+       
+       #thermometer{
+           padding: 5px 0 0 0;
+           font-size:20px;
+           text-align: left;
+           margin:0;
+           vertical-align: top;
+           color:white;
+           background-color: inherit;
+           max-width: 15px;
+       }
+       
+       #units{
+           font-size: 40px;
+           color:white;
+           font-weight: 900;
+           padding:0;
+           vertical-align: top;        
+            text-align: left;        
+            margin-left:32%;
+             height: 80px;
+             display:inline-block;
+             width: 27px;
+             
+       }
+       
+       #unit2
+       {
+           display: none;
+       }
+       
+       #precipBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0 0 3px 0;
+            font-size: 16px;
+            font-weight: 500;             
+            border:white solid 1px;
+               border-top-width: 1px;
+                  border-right-width: 0px;
+                     border-bottom-width: 0px;
+                        border-left-width: 1px;
+           border-radius: 10px
+       }
+       
+        #pressureBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0 0 3px 0;
+            font-size: 16px;
+            font-weight: 500;   
+            border:white solid 1px;
+            border-top-width: 1px;
+                  border-right-width: 1px;
+                     border-bottom-width: 0px;
+                        border-left-width: 0px;
+           border-radius: 10px;
+       }
+         #windSpeedBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:3px 0 0 0;
+            font-size: 16px;
+            font-weight: 500;           
+            border:white solid 1px;
+            border-top-width: 0px;
+                  border-right-width: 0px;
+                     border-bottom-width: 1px;
+                        border-left-width: 1px;
+           border-radius: 10px;
+       }
+       
+        #windDirectionBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:3px 0 0 0;
+            font-size: 16px;
+            font-weight: 500;         
+            border:white solid 1px;
+            border-top-width: 0px;
+                  border-right-width: 1px;
+                     border-bottom-width: 1px;
+                        border-left-width: 0px;
+           border-radius: 10px;
+       }
+       
+       .wi-wind-direction, .wi-barometer, .wi-raindrop{
+           font-size:20px;
+       }
+       
+       #humidityRow{
+           padding-top: 15px;
+       }
+       
+        #humidityBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0;
+            font-size: 16px;
+            font-weight: 500;           
+            margin-left: 46px;
+            border:white solid 1px;
+            border-top-width: 1px;
+                  border-right-width: 0px;
+                     border-bottom-width: 1px;
+                        border-left-width: 1px;
+           border-radius:10px;
+       }
+       
+        #cloudCoverBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0;
+            font-size: 16px;
+            font-weight: 500;        
+            border:white solid 1px;
+            border-top-width: 1px;
+                  border-right-width: 0px;
+                     border-bottom-width: 1px;
+                        border-left-width: 0px;
+           border-radius: 10px;
+       }
+       
+        #visibilityBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0;
+            font-size: 16px;
+            font-weight: 500;           
+            border:white solid 1px;
+            border-top-width: 1px;
+                  border-right-width: 1px;
+                     border-bottom-width: 1px;
+                        border-left-width: 0px;
+           border-radius: 10px;
+       }
+       
+       #weatherIconBox{
+            padding: 3px 0 0 0;         
+           margin:0;
+           text-align: center;
+           vertical-align: top;
+           max-height: 160px;
+       }
+       
+       #weatherIcon{
+           vertical-align:middle;
+           text-align: right;
+           padding:6px 0 6px 0;      
+           margin:0;
+           font-size: 90px;
+           color: white;
+           font-weight: bolder;
+           margin:0;
+       }
+       
+       #summary{
+           color:white;
+           text-align: center;
+           line-height: 14px;
+           padding:0 0 5px 0;
+           margin:0;
+           font-size: 12px;
+       }
+       #goLeft{
+           color:black;
+           float:left;
+           padding:2px;
+           margin:0 0 5px 15px;
+       }
+       #goRight{
+           color:black;
+           float:right;           
+           padding:2px;
+           margin:0 15px 5px 0;
 
-
+       }
+       
+       #dailyDetails{
+           background-color: peru;
+           height: 47%;
+           width:100%;
+           border-bottom-left-radius: 15px;
+           border-bottom-right-radius: 15px;
+           margin:0;
+           display: inline-block;
+           text-align: center;
+           padding-right: 8px;
+           padding-left: 8px;
+                  }
+                  
+            .tabular
+            {
+                display: table-cell;
+                padding: 3px 2px 2px 2px;
+                text-align: center;
+                font-size: 12px;
+                text-decoration: none;
+                margin:2px;
+                color:white;
+                font-weight: 600;
+                width: 100%;
+            }
+            
+            .tabular h5, .tabular h6{
+                border: white solid 1px;
+                border-radius: 3px;
+                padding-top: 4px;
+                padding-bottom: 2px;
+                }
+               
+        
 </style>
 <script>
-$(document).ready(function(){
-  var lat;
-  var long;
-  var fTemp;
-  var cTemp;
-  var kTemp;
-  var weatherType;
-  var windSpeed;
-  var city;
-  var weather;
-  var api;
+
+var myCenter;
+ var myMap;
+ var myMarker;
+ var globalDateString;
+var Lat;  //latitude
+var Lon; //longitude
+var toCelsius = true;
+var globalWeatherData = {}; //weather data from forecast.io
+var globalLocationData ={}; //google API data
+var globalTempC = 0;
+var globalFeelLikeC = 0;
+var globalTempF = 0;
+var globalFeelLikeF = 0;
+var globalRecCounter = -2;
+var globalHourlySize = 0;
+var globalFormattedAddress ='';
+
+//var dataIndex = -1;
+
+function stringifyJSON(someHtml_Id, someJSONdata)
+{
+     var p = document.getElementById(someHtml_Id);
+             p.innerHTML = JSON.stringify(someJSONdata).split(",").join(",<br>");
+  }
   
-  $.getJSON("http://ip-api.com/json", function(locat){
+  function setGlobalTemperature(t, f)
+  {
+      globalTempC = Math.round(t);
+      globalTempF = Math.round(t*1.8 + 32);
+      globalFeelLikeC = Math.round( f);
+     globalFeelLikeF = Math.round( f*1.8 + 32);
+     
+     displayTemperature();
+
+  }
+   
+function toggleTemperature()     
+{  
+     var d = $("#unit1");
+     
+     toCelsius = !(toCelsius);
+     
+    if (toCelsius===true)
+    {
+     $(d).removeClass("wi-fahrenheit");
+     $(d).addClass("wi-celsius");
+    }
+    else
+    {
+    $(d).removeClass("wi-celsius");
+    $(d).addClass("wi-fahrenheit");
+     }     
+      
+     displayTemperature();
+     displayDailyInfo(toCelsius);
+     
+      if (globalRecCounter === -1) //globalRecCounter controlled by displayInformation(direction)
+          obj = globalWeatherData.currently;
+      else
+          obj = globalWeatherData.hourly.data[globalRecCounter];
+      
+     displaySummary(obj.summary);         
+  }
+
+function displayLocation(data) 
+{
+    if (data.results[1])
+       globalFormattedAddress = data.results[1].formatted_address;
+    else if (data.results[0])
+        globalFormattedAddress = data.results[0].formatted_address;
+    else 
+        globalFormattedAddress = 'Unidentified Place';
+
+    $("#weatherLocation").empty().append(globalFormattedAddress);     
+}
+
+function displayCoordinates(pos)
+{
+   Lat = pos.coords.latitude.toFixed(2);
+   Lon =  pos.coords.longitude.toFixed(2);
+  
+    $("#latlng").empty().append("Lat:"+ Lat + "<sup>o</sup> &nbsp&nbsp&nbsp Long:"+ Lon +"<sup>o</sup>");
+    
+ }
+
+    
+function displayMap(pos)  // uses script: maps.googleapis.com/maps/api/js
+{
+    //document.getElementById("map")
+      myCenter = {lat: pos.coords.latitude, lng: pos.coords.longitude};
+      myMap = new google.maps.Map( document.getElementById("map"), { center:myCenter ,  scrollwheel:true,  zoom: 12  });
+      
+    }
+
+  function displaySummary(s)
+ {
+     var t;
+     var f;
+     
+      $("#summary").empty().append(s);     
+      myMarker = new google.maps.Marker({map:myMap, position: myCenter});
+      
+      
+     if (toCelsius) 
+     { 
+         t = globalTempC.toString() + '&deg;C';
+         f = globalFeelLikeC.toString() + '&deg;C';
+     }
+     else { 
+         t = globalTempF.toString() + '&deg;F';
+         f = globalFeelLikeF.toString() + '&deg;F';
+     }
+     
+      var myString =  '<div id="content">'+
+      '<div id="FCC-weathermap-challenge-note"></div>'+
+      '<h5 style = "color:darkseagreen">'+globalFormattedAddress+'</h5>'+
+      '<div id="bodyContent">'+
+     ' <h6>You are near Latitude '+Lat+'&deg; and Longitiude'+Lon+'&deg;.</h6>'+
+      '<p><b>At this time - '+globalDateString+' - </b>the temperature is <b>'+t+' </b>, and it sure feels like ' +f+
+      ' around here. </p>'+
+      '<p>Whatever you do, enjoy the outdoors and be careful!</p></div></div>';
+      
+      var infowindow = new google.maps.InfoWindow({content: myString });
+      infowindow.open(myMap, myMarker);
+  }
+  
+  function displayDate(time)
+  {
+    
+    var d = new Date(time*1000); 
+    var timePart = d.toLocaleTimeString();
+    var datePart = d.getDate();
+    var monthPart = d.getMonth();
+    var dayPart = d.getDay();
+
+
+      var Days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday" ];
+      var Months = ["January","February", "March", "April", "May", "June","July","August", "September","October","November","December"];
+      globalDateString = Days[dayPart]+" "+Months[monthPart]+" "+ datePart+",  "+d.getFullYear()+", "+timePart;
+                        
+     $("#theTime").empty().append( "<b>"+ globalDateString +"</b>");
+  }
+  
+    
+  function displayTemperature()
+  {
+      var  temp = globalTempC,   feel = globalFeelLikeC;
+      
+      if (!toCelsius)
+      {
+          temp = globalTempF;
+          feel = globalFeelLikeF;
+      }
+      
+      $("#temp").empty().append(temp);
+      $("#feelsLike").empty().append("&nbsp;"+feel+"&deg;");      
+      
+    }
     
   
-   var api ="http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=95a8b8623ab687fff68b68b5e2c64f73";
-      $.getJSON(api, function(data){
-        var weatherType = data.weather[0].description;
-        var kTemp = data.main.temp;
-        var windSpeed = data.wind.speed;
-        var city = locat.city;
-       
-        
-        var cToF = true;
-        fTemp = Math.round((kTemp)*(9/5)-459.67);
-        cTemp = Math.round(kTemp-273);
-        
-        $('#city').html(city);
-        $('#wed').html(weatherType);
-        $('#temp').html(cTemp);
-        $('#unit').click(function(){
-          if(cToF === false){
-            $('#temp').html(fTemp);
-            cToF = true;
-          }else{
-            $('#temp').html(cTemp);
-            cToF = false;
-          }
-        });
-       
-       
-        var icon =  weatherType;
-       switch(icon){
-         case 'clear sky':
-         $('#icon img').attr('src', 'http://openweathermap.org/img/w/01d.png');
-             break;
-           case 'few clouds':
-         $('#icon img ').attr('src', 'http://openweathermap.org/img/w/02d.png');
-           break;
-           case 'scattered clouds':
-         $('#icon img').attr('src', 'http://openweathermap.org/img/w/03d.png');
-             break;
-           case 'broken clouds':
-         $('#icon img').attr('src', 'http://openweathermap.org/img/w/04d.png');
-             break;
-           case 'overcast clouds':
-         $('#icon img').attr('src', 'http://openweathermap.org/img/w/04d.png');
-             break;
-           case 'shower rain':
-         $('#icon img').attr('src', 'http://openweathermap.org/img/w/09d.png');
-             break;
-           case 'rain':
-         $('#icon img ').attr('src', 'http://openweathermap.org/img/w/10d.png');
-           break;
-           case 'thunderstorm':
-         $('#icon img').attr('src', 'http://openweathermap.org/img/w/11d.png');
-             break;
-           case 'snow':
-         $('#icon img').attr('src', 'http://openweathermap.org/img/w/13d.png');
-             break;
-           case 'mist':
-         $('#icon img').attr('src', 'http://openweathermap.org/img/w/50d.png');
-             break;
-         default:
-         $('#icon img ').attr('src', 'http://openweathermap.org/img/w/02d.png');
-       }
-   
-       
-  var back = weatherType;
-  switch(back) {
-    case "clear sky":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2016/03/06/05/03/sunrise-1239727_960_720.jpg)');
-      break;
-    case "few clouds":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2014/06/15/20/35/sunset-369498_960_720.jpg)');
-       break;
-    case "scattered clouds":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/04/11/19/42/sunrise-102838_960_720.jpg)');
-       break;
-    case "broken clouds":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/10/12/18/30/sunset-194702_960_720.jpg)');
-       break;
-      case "overcast clouds":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/10/12/18/30/sunset-194702_960_720.jpg)');
-       break;
-     case "shower rain":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2014/04/05/11/39/spring-316539_960_720.jpg)');
-       break;
-    case "rain":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2012/03/01/01/19/background-20147_960_720.jpg)');
-      break;
-    case "thunderstorm":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2015/04/20/06/07/storm-730653_960_720.jpg)');
-      break;
-    case "snow":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/12/09/03/42/night-225417_960_720.jpg)');
-      break;
-    case "mist":
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2015/01/28/23/35/landscape-615429_960_720.jpg)');
-      break;
-    default:
-      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/10/12/18/30/sunset-194702_960_720.jpg)');
-        
- 
+  function  displayPrecipitation(p)
+  {
+      $("precipAmt").empty().append(Math.round(p)+"mm");
+      
+  }  
+  
+   function  displayPressure(p)
+  {
+      $("#pressureAmt").empty().append(p.toFixed(0));
+      
   }
- });
-      });
-});
+  
+  function  displayWindSpeed(w)
+  {
+      $("#windSpeed").empty().append(Math.round(w*3.6).toString() +"kmh");     
+  }
+
+function  displayWindDirection(d)
+  {
+      $("#theDirection").empty().append(d.toString() +"&deg;");     
+  }
+  
+  function  displayHumidity(h)
+  {
+      $("#humidity").empty().append(Math.round(h*100) +"&#37;");     
+  }
+
+function displayCloudCover(c)
+ {
+      $("#cloudCover").empty().append(Math.round(c*100) +"&#37;");     
+  }
+  
+function displayVisibility(v)
+ {
+      $("#visibility").empty().append(Math.round(v).toString() +"km");     
+  }
+  
+function displayIcon(icn, callType)
+ {
+    var icon;
+    
+     switch(icn) {
+     case "clear-day":
+        icon = "wi-day-sunny";
+        break;
+     case "clear-night":
+        icon = "wi-night-clear";
+        break;
+       case "snow":
+        icon = "wi-snow";
+        break;
+        case "sleet":
+        icon = "wi-sleet";
+        break;
+        case "rain":
+        icon = "wi-rain";
+        break;
+         case "wind":
+        icon = "wi-strong-wind";
+        break;
+         case "fog":
+        icon = "wi-fog";
+        break;
+         case "cloudy":
+        icon = "wi-cloudy";
+        break;
+         case "partly-cloudy-night":
+        icon = "wi-night-partly-cloudy";
+        break;
+         case "partly-cloudy-day":
+        icon = "wi-day-cloudy";
+        break;
+         case "hail":
+        icon = "wi-hail";
+        break;
+         case "thunderstorm":
+       icon = "wi-thunderstorm";
+        break;
+         case "tornado":
+        icon = "wi-tornado";
+        break;
+       case "hurricane":
+        icon = "wi-hurricane";
+       break;
+     default:
+         icon = "wi-na";
+ } 
+ 
+ /*This function is used both to (i) print the weatherIcon  or (ii) return the value of the icon. This is a cheap work-around
+  to use the function in different ways. The function is called by displayInformation(0) as well as displayDailyInfo(1)*/
+                                                                
+ if (callType === 0)
+     $("#weatherIcon").empty().append('<i class="wi '+icon+' "></i>');
+  else
+       return icon;
+  }
+     
+ function  displayInformation(direction)
+  {      
+      var obj ={};
+      var shouldDisplay = false;
+      
+      if  (direction === -2)   //the initial call after data gathered from forecast.io
+      {   
+          globalRecCounter = -1;
+          obj = globalWeatherData.currently;
+          shouldDisplay = true;
+      }
+      
+       
+     else if  ( ( (globalRecCounter === -1) && (direction === -1) ) || ((globalRecCounter === (globalHourlySize - 1)) &&(direction === 1)))
+    {
+         shouldDisplay = false;
+     }
+      
+      else //display new information
+      {
+       globalRecCounter += direction;  //direction = -1 or +1
+       
+      if (globalRecCounter === -1)
+          obj = globalWeatherData.currently;
+      else
+          obj = globalWeatherData.hourly.data[globalRecCounter];
+      
+     shouldDisplay = true;
+  }
+      
+      if (shouldDisplay)
+      {
+     displayDate(obj.time);   
+     
+     setGlobalTemperature(obj.temperature, obj.apparentTemperature);
+     
+     displayPrecipitation(obj.precipIntensity);
+     displayPressure(obj.pressure);
+     displayWindSpeed(obj.windSpeed);
+     displayWindDirection(obj.windBearing);
+     displayHumidity(obj.humidity);
+     displayCloudCover(obj.cloudCover);
+     displayVisibility(obj.visibility);
+     displaySummary(obj.summary);
+     displayIcon(obj.summary,0);
+     displayIcon(obj.icon, 0);     
+     }
+  }
+  
+  function theDay(time)
+  {
+      var d = new Date(time*1000); 
+      var indx = d.getDay();
+
+      var Days = ["SUN","MON","TUE","WED","THUR","FRI","SAT" ];
+   
+      return Days[indx];
+  }
+  
+  function theTemp(t, celsius)
+  {
+      
+     if (celsius === true)
+         return t.toFixed(0).toString() + '&deg;';
+     else 
+          return (t*1.8+32).toFixed(0).toString() + '&deg;';
+  }
+  
+function theMoon(m)
+{
+    var f =  0.017857 ;     // f = half of (1 /28)
+    
+    if (m < f)
+        return 'wi-moon-new';
+    else if ( (f <= m) && (m < 3*f) )
+        return 'wi-moon-waxing-crescent-1';
+     else if ( (3*f <= m) && (m < 5*f) )
+        return 'wi-moon-waxing-crescent-2';
+     else if ( (5*f <= m) && (m < 7*f) )
+        return 'wi-moon-waxing-crescent-3';
+     else if ( (7*f <= m) && (m < 9*f) )
+        return 'wi-moon-waxing-crescent-4';
+     else if ( (9*f <= m) && (m < 11*f) )
+        return 'wi-moon-waxing-crescent-5';
+     else if ( (11*f <= m) && (m < 13*f) )
+        return 'wi-moon-waxing-crescent-6';
+     else if ( (13*f<= m) && (m < 15*f) )
+        return 'wi-moon-first-quarter';
+     else if ( (15*f<= m) && (m < 17*f) )
+        return 'wi-moon-waxing-gibbous-1';
+     else if ( (17*f <= m) && (m < 19*f) )
+        return 'wi-moon-waxing-gibbous-2';
+     else if ( (19*f<= m) && (m < 21*f) )
+        return 'wi-moon-waxing-gibbous-3';
+     else if ( (21*f <= m) && (m < 23*f) )
+        return 'wi-moon-waxing-gibbous-4';
+     else if ( (23*f <= m) && (m < 25*f) )
+        return 'wi-moon-waxing-gibbous-5';
+     else if ( (25*f <= m) && (m < 27*f) )
+        return 'wi-moon-waxing-gibbous-6';
+    else if ( (27*f <= m) && (m < 29*f) )
+        return 'wi-moon-full';    
+    else if ( (29*f <= m) && (m < 31*f) )
+        return 'wi-moon-waning-gibbous-1';
+     else if ( (31*f <= m) && (m < 33*f) )
+        return 'wi-moon-waning-gibbous-2';
+     else if ( (33*f <= m) && (m < 35*f) )
+        return 'wi-moon-waning-gibbous-3';
+     else if ( (35*f<= m) && (m < 37*f) )
+        return 'wi-moon-waning-gibbous-4';
+     else if ( (37*f <= m) && (m < 39*f) )
+        return 'wi-moon-waning-gibbous-5';
+     else if ( (39*f <= m) && (m < 41*f) )
+        return 'wi-moon-waning-gibbous-6';
+     else if ( (41*f <= m) && (m < 43*f) )
+        return 'wi-moon-last-quarter';
+    else if ( (43*f <= m) && (m < 45*f) )
+        return 'wi-moon-waning-crescent-1';
+     else if ( (45*f <= m) && (m < 47*f) )
+        return 'wi-moon-waning-crescent-2';
+     else if ( (47*f <= m) && (m < 49*f) )
+        return 'wi-moon-waning-crescent-3';
+     else if ( (49*f <= m) && (m < 51*f) )
+        return 'wi-moon-waning-crescent-4';
+     else if ( (51*f<= m) && (m < 53*f) )
+        return 'wi-moon-waning-crescent-5';
+     else if ( (53*f <= m) && (m < 55*f) )
+        return 'wi-moon-waning-crescent-6';
+    else 
+        return 'wi-moon-new';
+        
+}
+
+function displayDailyInfo(unit) 
+  {
+      var HTMLstr = [];
+          
+      var d = globalWeatherData.daily.data;
+      var len = d.length;
+      var day, icon, tMax, tMin, windSp, moon;
+      var bla = 'class';
+      
+   HTMLstr[0] = "<div class = 'tabular'  style = 'color: darkseagreen; font-weight:400, padding:0'><h5 ><i class = 'fa fa-calendar'></i></h5><h5><i class = 'fa fa-info-circle'></i></h5> <h5><i class = 'wi wi-thermometer'></i><i class = 'fa fa-long-arrow-up'></i></h5><h6><i class = 'wi wi-thermometer-exterior'></i><i class = 'fa fa-long-arrow-down'></i></h6><h6><i class = 'wi wi-strong-wind'></i></h6><h5><i class = 'wi wi-moon-waxing-crescent-5' ></i></h5></div> ";
+  
+   for (var i = 0; i < len ; i++)
+      {
+          day = theDay(d[i].time);
+          icon = displayIcon(d[i].icon, 1);
+          tMax =  theTemp(d[i].temperatureMax, unit);
+          tMin = theTemp(d[i].temperatureMin, unit);
+          moon = theMoon(d[i].moonPhase);
+          windSp = Math.round(d[i].windSpeed*3.6).toString()+'kh';
+                 
+      HTMLstr[i+1]   =   "<div class = 'tabular'><h5   style = 'color: darkseagreen; font-weight:900; font-size:10px'>"+day+"</h5><h5><i class = 'wi "+icon+ "'></i></h5><h5>"
+              + tMax +"</h5><h6>"+ tMin+"</h6><h6>"
+              + windSp+"</h6><h5><i class = 'wi "+moon+ "'></i></h5></div> ";   
+      }
+      
+            document.getElementById("dailyDetails").innerHTML = HTMLstr.join("");
+   }
+
+function retrieveInformation(position) 
+{
+    displayCoordinates(position); //position returned from getLocation();
+    
+   //get the name of the place
+    jQuery.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.latitude+","+position.coords.longitude+"&key=AIzaSyAmuPPhRj1fkH4bJ3ALbGxKh9xx57o9a2Y ", 
+    function(data, textStatus, jqXHR)    //data, textStatus and jqXHR /xmlHTTPrequest returned by getJSON
+    {
+        globalLocationData = data;
+        displayLocation(data);
+        displayDate();
+        displayMap(position);        
+   } ); //getJSON
+                 
+     //now, get the weather forecast data from forecast.io
+    jQuery.getJSON("https://api.forecast.io/forecast/c53da8b51881189a84ffc31c0d620d07/" + position.coords.latitude + "," + position.coords.longitude + "?units=auto&callback=?",
+    function(data)
+    {  
+     globalWeatherData = data;
+     globalHourlySize = data.hourly.data.length;
+     
+     displayInformation(-2);
+     displayDailyInfo(toCelsius);
+   
+     
+         }//function     
+      ) ;   //getJSON */
+}//showPosition 
 
 
+function onError(err)
+{
+    $("#weatherLocation").empty().append("There was an error<br>Error Code:"+err.code+"<br>"+err.message);
+}
 
+function getLocation()  //see your implementation of getLocation() on codepen.io. geolocation does not work in Chrome 5.0 or higher if not secure.
+{
+    var oneWeek = 604800000; //in milliseconds
+    var positionOptions = {enableHighAccuracy : true, timeout: 60000, maximumAge:oneWeek }; //highAccuracy, timeOut, cache-Age
+    
+    if (navigator.geolocation) 
+    {
+        //getCurrentPosition() can also take an argument like the positionOptions object above
+        navigator.geolocation.getCurrentPosition(retrieveInformation, getAlternativeLocation ); //can also take arguments "error" and "options = positionOptions"
+    } 
+    else  //alternatively, you may use ip-api.com
+    {
+       onError("Geolocation is not supported by this browser. Hold on...");
+       getAlternativeLocation({'code':'Browser' , 'message':'Geolocation not supported'});       
+    }
+}
+
+function getAlternativeLocation(err)
+{
+   onError('Geolocation error: ('+err.code+ ') '+err.message);
+  
+    var position = {'coords':{'latitude':0, 'longitude':0}};
+  
+    $.getJSON("http://ip-api.com/json/?callback=?", 
+     function(data)
+     { 
+      
+         if (data.status === "success")
+         {
+          position.coords.latitude = data.lat;
+         position.coords.longitude = data.lon;
+           
+
+         retrieveInformation(position);
+         }
+
+         else
+           onError(data.message);
+
+    }
+  );
+}
+
+getLocation();
         </script>
 </head>
-<body class="back" class="text-center">
+<body> 
+      
+          <div class = "w3-container"> 
+              
+                 <div id = "twoPhones" class = "w3-row"> 
+                             <div class =" iphone  iphone1 col-md-4"> 
+                               <div class ="phoneInfo">
+                                   
+                                     <div class = " general"> 
+                                             <h3 id = "weatherLocation">INTERNET UNAVAILABLE. VALUES INCORRECT</h3>                                          
+                                             <p id ="latlng"></p>             
+                                             <p id = "theTime"></p>
+                                     </div>    
+                                  
+                                 
+                                  <div id ="specific" class="w3-row" > 
+                                       <div  id ="twoThirdBox" class="w3-twothird" >
+                                            <div id ="tempRow" class ="w3-row">
+                                                <div id = "tempDiv" class ="w3-half w3-container">
+                                                <div id = "thermometer" class="w3-col w3-container">
+                                                     <i class = ' wi wi-thermometer' ></i>
+                                                 </div>
+                                                 <div  id = "tempBox" class = "w3-quarter">
+                                                     <i id = "temp"> 45</i>
+                                                     <i id = "feelsLike" class = "fa fa-user-plus w3-col">&nbsp;30&deg;</i>
+                                                 </div>        
+                                                 <div id = "units"  class = "w3-rest">
+                                                            <i  id = "unit1" class = " wi wi-celsius" >
+                                                            <button id = "randomUnit" class = "glyphicon glyphicon-random" onclick="toggleTemperature()" ></button>
+                                                            </i>
+                                                            <i  id = "unit2" class = "wi wi-fahrenheit" ></i>                                                           
+                                                 </div>
+                                                    
+                                                </div>
+                                                
+                                                <div id ="precipBox"  class = "w3-quarter">
+                                                    <div id="precipSymbol" class="w3-row">
+                                                        <i  class = ' wi wi-raindrop' ></i>
+                                                    </div>
+                                                     <div id="precipAmt" class="w3-row">                                                  
+                                                            0.35
+                                                     </div>
+                                                 </div>
+                                                 <div id ="pressureBox"  class = "w3-quarter">
+                                                    <div id="barometer" class="w3-row">
+                                                        <i  class = ' wi wi-barometer' ></i>
+                                                    </div>
+                                                     <div id="pressureAmt" class="w3-row">                                                  
+                                                            1015
+                                                     </div>
+                                                 </div>
+                                                <div id ="windSpeedBox"  class = "w3-quarter">
+                                                    <div id="wind" class="w3-row">
+                                                        <i  class = ' wi wi-strong-wind' ></i>
+                                                    </div>
+                                                     <div id="windSpeed" class="w3-row">                                                  
+                                                            45
+                                                     </div>
+                                                 </div>
+                                                <div id ="windDirectionBox"  class = "w3-quarter">
+                                                    <div id="windDirection" class="w3-row">
+                                                        <i  class = 'wi wi-wind-direction' ></i>
+                                                    </div>
+                                                     <div id="theDirection" class="w3-row">                                                  
+                                                            1015
+                                                     </div>
+                                                 </div>
+                                            </div>
+                                           
+                                           <div id ="humidityRow" class ="w3-row">
+                                               <div id = "humidityBox" class ="w3-quarter">
+                                                   <div id = "humidityIcon" class ="w3-row"><i class = "wi wi-humidity"></i></div>
+                                                   <div id ="humidity" class ="w3-row">10%</div>                                                   
+                                               </div>
+                                               
+                                                <div id = "cloudCoverBox" class ="w3-quarter">
+                                                    <div class ="w3-row"><i class = "wi wi-cloud"></i></div>
+                                                   <div id = "cloudCover" class ="w3-row">45%</div>                                                   
+                                               </div>    
+                                               
+                                               <div id = "visibilityBox" class ="w3-quarter">
+                                                   <div class ="w3-row"><i class = "fa fa-binoculars"></i></div>
+                                                   <div id = "visibility" class ="w3-row">95%</div>                                                   
+                                               </div>
+                                           </div>                                            
+                                </div>
+                                  
+                                      
+                                <div id = "weatherIconBox" class="w3-third w3-container" >
+                                    <i id = "weatherIcon"><i class="wi wi-day-sunny"></i></i>
+                                    <div>
+                                                 <div id ='summary'>summary</div>
+                                                 <button id = 'goLeft'   onclick = "displayInformation(-1)"> <i class = "fa fa-arrow-left"></i></button>
+                                                 <button id = 'goRight'  onclick = "displayInformation(1)"> <i class = "fa fa-arrow-right"></i></button>
+                                    </div>
+                                 </div>
+                        </div>            
+                                      
+                        <div id="dailyDetails"> </div>
+                                   
+                    </div>              
+           </div> 
+                                                              
+            <div class ="iphone  iphone2 col-md-4"> 
+                             <div id = "map" class = "phoneInfo ">
+                                 The map goes here...
+                             </div> 
+            </div>                                                                  
+                         
+          </div> 
+        </div> 
   
-<div class="container-fluid animated slideInLeft"> 
-
-<h1 id="name">Current Weather</h1>
-
-<h1 id="city">location<h1>
-  
-
-<h2 id="wed"></h2>
-  
-<h5 id="des"></h5>
-  <div id = "icon"><img id="i" src="#"></div>
-<h1 id="temp"></h1>
-  
-<button class="btn btn-primary btn-lg" id="unit">C/F</button>
-</div>
-<footer id="by">by<a href="http://codepen.io/annamyself/" target="_blank"> annamyself</a></footer>
-  
+  <script src ='https://s3-us-west-2.amazonaws.com/s.cdpn.io/676366/main.js'>
+     $(document).ready(getLocation); 
+  </script>
+        </body> 
 </html>
