@@ -1,0 +1,173 @@
+<html>
+<head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Catamaran);
+body {
+  background-color:black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  font-family: 'Catamaran', sans-serif;
+}
+.container-fluid {
+  background-color: white;
+  opacity:0.7;
+  width: 30%;
+  color: black;
+}
+img {
+  width: 200px;
+}
+h1 {
+  font-size: 70px;
+}
+h2 {
+  font-size: 50px;
+}
+
+
+</style>
+<script>
+$(document).ready(function(){
+  var lat;
+  var long;
+  var fTemp;
+  var cTemp;
+  var kTemp;
+  var weatherType;
+  var windSpeed;
+  var city;
+  var weather;
+  var api;
+  
+  $.getJSON("http://ip-api.com/json", function(locat){
+    
+  
+   var api ="http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=95a8b8623ab687fff68b68b5e2c64f73";
+      $.getJSON(api, function(data){
+        var weatherType = data.weather[0].description;
+        var kTemp = data.main.temp;
+        var windSpeed = data.wind.speed;
+        var city = locat.city;
+       
+        
+        var cToF = true;
+        fTemp = Math.round((kTemp)*(9/5)-459.67);
+        cTemp = Math.round(kTemp-273);
+        
+        $('#city').html(city);
+        $('#wed').html(weatherType);
+        $('#temp').html(cTemp);
+        $('#unit').click(function(){
+          if(cToF === false){
+            $('#temp').html(fTemp);
+            cToF = true;
+          }else{
+            $('#temp').html(cTemp);
+            cToF = false;
+          }
+        });
+       
+       
+        var icon =  weatherType;
+       switch(icon){
+         case 'clear sky':
+         $('#icon img').attr('src', 'http://openweathermap.org/img/w/01d.png');
+             break;
+           case 'few clouds':
+         $('#icon img ').attr('src', 'http://openweathermap.org/img/w/02d.png');
+           break;
+           case 'scattered clouds':
+         $('#icon img').attr('src', 'http://openweathermap.org/img/w/03d.png');
+             break;
+           case 'broken clouds':
+         $('#icon img').attr('src', 'http://openweathermap.org/img/w/04d.png');
+             break;
+           case 'overcast clouds':
+         $('#icon img').attr('src', 'http://openweathermap.org/img/w/04d.png');
+             break;
+           case 'shower rain':
+         $('#icon img').attr('src', 'http://openweathermap.org/img/w/09d.png');
+             break;
+           case 'rain':
+         $('#icon img ').attr('src', 'http://openweathermap.org/img/w/10d.png');
+           break;
+           case 'thunderstorm':
+         $('#icon img').attr('src', 'http://openweathermap.org/img/w/11d.png');
+             break;
+           case 'snow':
+         $('#icon img').attr('src', 'http://openweathermap.org/img/w/13d.png');
+             break;
+           case 'mist':
+         $('#icon img').attr('src', 'http://openweathermap.org/img/w/50d.png');
+             break;
+         default:
+         $('#icon img ').attr('src', 'http://openweathermap.org/img/w/02d.png');
+       }
+   
+       
+  var back = weatherType;
+  switch(back) {
+    case "clear sky":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2016/03/06/05/03/sunrise-1239727_960_720.jpg)');
+      break;
+    case "few clouds":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2014/06/15/20/35/sunset-369498_960_720.jpg)');
+       break;
+    case "scattered clouds":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/04/11/19/42/sunrise-102838_960_720.jpg)');
+       break;
+    case "broken clouds":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/10/12/18/30/sunset-194702_960_720.jpg)');
+       break;
+      case "overcast clouds":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/10/12/18/30/sunset-194702_960_720.jpg)');
+       break;
+     case "shower rain":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2014/04/05/11/39/spring-316539_960_720.jpg)');
+       break;
+    case "rain":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2012/03/01/01/19/background-20147_960_720.jpg)');
+      break;
+    case "thunderstorm":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2015/04/20/06/07/storm-730653_960_720.jpg)');
+      break;
+    case "snow":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/12/09/03/42/night-225417_960_720.jpg)');
+      break;
+    case "mist":
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2015/01/28/23/35/landscape-615429_960_720.jpg)');
+      break;
+    default:
+      $('.back').css('background-image', 'url(https://pixabay.com/static/uploads/photo/2013/10/12/18/30/sunset-194702_960_720.jpg)');
+        
+ 
+  }
+ });
+      });
+});
+
+
+
+        </script>
+</head>
+<body class="back" class="text-center">
+  
+<div class="container-fluid animated slideInLeft"> 
+
+<h1 id="name">Current Weather</h1>
+
+<h1 id="city">location<h1>
+  
+
+<h2 id="wed"></h2>
+  
+<h5 id="des"></h5>
+  <div id = "icon"><img id="i" src="#"></div>
+<h1 id="temp"></h1>
+  
+<button class="btn btn-primary btn-lg" id="unit">C/F</button>
+</div>
+<footer id="by">by<a href="http://codepen.io/annamyself/" target="_blank"> annamyself</a></footer>
+  
+</html>
